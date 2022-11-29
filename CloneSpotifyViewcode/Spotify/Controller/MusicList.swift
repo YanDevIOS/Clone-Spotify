@@ -7,6 +7,8 @@
 
 import UIKit
 
+let identifier: String = "tableViewCell"
+
 struct MusicList {
     let title: String
     let image: UIImage

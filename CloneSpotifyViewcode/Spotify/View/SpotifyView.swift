@@ -9,7 +9,22 @@ import UIKit
 
 class SpotifyView: UIView {
     
-    static let identifier: String = "CustomCollectionViewCell"
+    static let identifier: String = "tableViewCell"
+    
+    struct MusicList {
+        let title: String
+        let image: UIImage
+    }
+
+    let musics: [MusicList] = [
+        MusicList(title: "No Repeat", image: #imageLiteral(resourceName: "Spotify.png")),
+        MusicList(title: "Máquina do tempo", image: #imageLiteral(resourceName: "Spotify.png")),
+        MusicList(title: "Caminho Diário", image: #imageLiteral(resourceName: "Spotify.png")),
+        MusicList(title: "De volta pro reapeat", image: #imageLiteral(resourceName: "Spotify.png")),
+        MusicList(title: "Músicas curtidas", image: #imageLiteral(resourceName: "Spotify.png")),
+        MusicList(title: "As mais tocadas no seu 2020", image: #imageLiteral(resourceName: "Spotify.png")),
+        MusicList(title: "As mais tocadas no seu 2022", image: #imageLiteral(resourceName: "Spotify.png")),
+    ]
     
     lazy var saudacaoLabel: UILabel = {
         let label = UILabel()
@@ -163,17 +178,18 @@ class SpotifyView: UIView {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout.init())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .none
-        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(TableViewCell.self, forCellWithReuseIdentifier: "tableViewCell")
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .horizontal
         collectionView.setCollectionViewLayout(layout, animated: false)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = UIColor(red: 40/255.0, green: 39/255.0, blue: 39/255.0, alpha: 1.0)
+        collectionView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellWithReuseIdentifier: "tableViewCell")
                 
         return collectionView
     }()
-    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -202,6 +218,8 @@ class SpotifyView: UIView {
     }
     
     private func setUpContraints() {
+        
+        
         NSLayoutConstraint.activate([
             self.saudacaoLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 90),
             self.saudacaoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 15),
@@ -264,7 +282,7 @@ class SpotifyView: UIView {
             self.collectionView.topAnchor.constraint(equalTo: self.nameListLabel.bottomAnchor, constant: 15),
             self.collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            self.collectionView.heightAnchor.constraint(equalToConstant: 200)
+            self.collectionView.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
 }
@@ -272,16 +290,16 @@ class SpotifyView: UIView {
 extension SpotifyView: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return musics.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell
+        let cell: TableViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tableViewCell", for: indexPath) as! TableViewCell
         
-        return cell ?? CustomCollectionViewCell()
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.width, height: 150)
+        return CGSize(width: 150, height: 200)
     }
 }

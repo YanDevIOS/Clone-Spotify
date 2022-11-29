@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71B9BBC1291C400700E5A451 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9BBC0291C400700E5A451 /* CustomCollectionViewCell.swift */; };
+		7180161B2935945E0048D45E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718016192935945E0048D45E /* TableViewCell.swift */; };
+		7180161C2935945E0048D45E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7180161A2935945E0048D45E /* TableViewCell.xib */; };
 		71B9BBC3291C714B00E5A451 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9BBC2291C714A00E5A451 /* MusicList.swift */; };
-		71B9BBC5291C77DF00E5A451 /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9BBC4291C77DF00E5A451 /* MusicCollectionViewCell.swift */; };
 		71D459A42919C95A00876710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D459A32919C95A00876710 /* AppDelegate.swift */; };
 		71D459A62919C95A00876710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D459A52919C95A00876710 /* SceneDelegate.swift */; };
 		71D459A82919C95A00876710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D459A72919C95A00876710 /* ViewController.swift */; };
@@ -39,9 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		71B9BBC0291C400700E5A451 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		718016192935945E0048D45E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		7180161A2935945E0048D45E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		71B9BBC2291C714A00E5A451 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
-		71B9BBC4291C77DF00E5A451 /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
 		71D459A02919C95A00876710 /* CloneSpotifyViewcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloneSpotifyViewcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D459A32919C95A00876710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71D459A52919C95A00876710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71801616293593A20048D45E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				718016192935945E0048D45E /* TableViewCell.swift */,
+				7180161A2935945E0048D45E /* TableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		71D459972919C95A00876710 = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +152,9 @@
 		71D459D52919CAB700876710 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71801616293593A20048D45E /* Cell */,
 				71D459A52919C95A00876710 /* SceneDelegate.swift */,
 				71D459D92919CEA900876710 /* SpotifyView.swift */,
-				71B9BBC0291C400700E5A451 /* CustomCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,7 +164,6 @@
 			children = (
 				71D459A72919C95A00876710 /* ViewController.swift */,
 				71B9BBC2291C714A00E5A451 /* MusicList.swift */,
-				71B9BBC4291C77DF00E5A451 /* MusicCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71D459B02919C95C00876710 /* LaunchScreen.storyboard in Resources */,
+				7180161C2935945E0048D45E /* TableViewCell.xib in Resources */,
 				71D459AD2919C95C00876710 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,11 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B9BBC1291C400700E5A451 /* CustomCollectionViewCell.swift in Sources */,
+				7180161B2935945E0048D45E /* TableViewCell.swift in Sources */,
 				71D459A82919C95A00876710 /* ViewController.swift in Sources */,
 				71D459DA2919CEA900876710 /* SpotifyView.swift in Sources */,
 				71B9BBC3291C714B00E5A451 /* MusicList.swift in Sources */,
-				71B9BBC5291C77DF00E5A451 /* MusicCollectionViewCell.swift in Sources */,
 				71D459A42919C95A00876710 /* AppDelegate.swift in Sources */,
 				71D459A62919C95A00876710 /* SceneDelegate.swift in Sources */,
 			);
